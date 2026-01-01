@@ -67,6 +67,7 @@ def main():
         },
         # If user sends /quit at any point, run the cancel function
         fallbacks=[CommandHandler("quit", cancel)],
+        allow_reentry=True
     )
 
     application.add_handler(conv_handler)
