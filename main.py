@@ -29,12 +29,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user_id = update.effective_user.id
 
-    # RESET state
-    user_state[user_id] = {
-        "step": None,
-        "data": {}
-    }
-    
     text = 'Welcome to the better prompt bot.\nPlease send your prompt so I can improve it (send /quit for end)'
     await context.bot.send_message(chat_id=update.effective_chat.id, text=text)
     
@@ -82,18 +76,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# API_KEY = 'aa-HAveKxHZIz3RNRJvTukHw2EOa8zX6yiuHitfEum208F9ahIP'
-#
-# client = genai.Client(
-#     api_key=API_KEY, http_options={"base_url": "https://api.avalai.ir"}
-# )
-
-
-
-# response = client.models.generate_content(
-#     model="gemini-2.5-flash-lite", contents="given this promt {make a orange two headed cat that standing on a chair} you will make this promt better and more sutible for llms you will use all prompt engeenering prociples"
-# )
-
-
-# print(response.text)
