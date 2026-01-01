@@ -34,16 +34,7 @@ def main():
 
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token(TOKEN).build()
-
-    start_handler = CommandHandler('start', start)
-
-
-    application.add_handler(start_handler)
-    application.add_handler(echo_handler)
-
-    application.run_polling()
-
+    main()
 
 # API_KEY = 'aa-HAveKxHZIz3RNRJvTukHw2EOa8zX6yiuHitfEum208F9ahIP'
 #
