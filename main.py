@@ -29,7 +29,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user_id = update.effective_user.id
 
-    text = 'Welcome to the better prompt bot.\nPlease send your prompt so I can improve it (send /quit for end)'
+    text = '''Welcome to Better Prompt! 🚀
+        Send any prompt, and get a clearer, stronger, AI-optimized version.
+        ⚡ Early development — more features coming soon!
+💡      Ideas or issues? Contact: @Ali_Najafpour07
+        (send /quit for end)'''
     await context.bot.send_message(chat_id=update.effective_chat.id, text=text)
     
     return WAITING_FOR_PROMPT
