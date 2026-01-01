@@ -1,10 +1,16 @@
 from google import genai
 import asyncio
 import logging
+
+from google.auth import message
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, ConversationHandler
 
+BOT_TOKEN = '8286997548:AAGNAVERznnt7UpIYT01cvIlBq-NY_8ssqc'
 WAITING_FOR_PROMPT = 1
+
+async def improve_prompt(user_text):
+    return 'we reached here good'
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -12,16 +18,29 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = 'Welcome to the better prompt bot.\nPlease send your prompt so I can improve it (send /quit for end)'
     await context.bot.send_message(chat_id=update.effective_chat.id, text=text)
+    return WAITING_FOR_PROMPT
 
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text='Conversation ended. come back soon!')
     return ConversationHandler.END
 
-TOKEN = "8286997548:AAGNAVERznnt7UpIYT01cvIlBq-NY_8ssqc"
+
+async def handle_prompt(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    user_input = update.message.text
+
+    improved_text = await  improve_prompt(user_input)
+
+    await update.message.reply_text(improved_text)
+
+    await context.bot.send_message(chat_id=update.effective_chat.id, text='You can send another prompt to improve, or send /quit to end.')
+
+    return WAITING_FOR_PROMPT
+
 
 def main():
-    application = ApplicationBuilder().token(TOKEN).build()
+    application = ApplicationBuilder().token(BOT_TOKEN).build()
 
     start_handler = CommandHandler('start', start)
 
