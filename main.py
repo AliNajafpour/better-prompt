@@ -26,8 +26,18 @@ async def improve_prompt(user_text, prompt_base, api_token):
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    user_id = update.effective_user.id
+
+    # RESET state
+    user_state[user_id] = {
+        "step": None,
+        "data": {}
+    }
+    
     text = 'Welcome to the better prompt bot.\nPlease send your prompt so I can improve it (send /quit for end)'
     await context.bot.send_message(chat_id=update.effective_chat.id, text=text)
+    
     return WAITING_FOR_PROMPT
 
 
