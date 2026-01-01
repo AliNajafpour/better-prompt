@@ -2,7 +2,6 @@ from google import genai
 import asyncio
 import logging
 
-from google.auth import message
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, ConversationHandler
 
