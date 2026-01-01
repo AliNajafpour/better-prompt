@@ -43,11 +43,23 @@ def main():
     application = ApplicationBuilder().token(BOT_TOKEN).build()
 
     start_handler = CommandHandler('start', start)
-
+    prompt_handler = MessageHandler(filters.TEXT & ~filters.COMMAND, handle_prompt)
     quit_handler = CommandHandler('quit', cancel)
+
+    conv_handler = ConversationHandler(
+        entry_points=[start_handler],
+        states={
+            WAITING_FOR_PROMPT: [
+                prompt_handler
+            ],
+        },
+        # If user sends /quit at any point, run the cancel function
+        fallbacks=[quit_handler],
+    )
 
     application.add_handler(start_handler)
     application.add_handler(quit_handler)
+    application.add_handler(conv_handler)
 
     application.run_polling()
 
