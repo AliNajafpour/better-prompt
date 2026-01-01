@@ -9,7 +9,7 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 
-BOT_TOKEN = '8286997548:AAGNAVERznnt7UpIYT01cvIlBq-NY_8ssqc'
+BOT_TOKEN = '8464400983:AAFsavlVzbjcFvyUQXicnyPPwozEAovxB0I'
 GOOGLE_TOKENS = ['AIzaSyDwz0TTEd23NezhYEs_4W4IVFpKDyPfLWM']
 
 WAITING_FOR_PROMPT = 1
