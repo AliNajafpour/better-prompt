@@ -8,7 +8,7 @@ Better Prompt is a simple Telegram bot (built mostly for personal use) that tran
 
 Enhance any AI prompt with clarity and structure
 
-Optimize prompts for better results on LLMs (ChatGPT, DALL·E, etc.)
+Optimize prompts for better results on LLMs (ChatGPT, Gemini, etc.)
 
 Works for text, code, and image prompts
 
