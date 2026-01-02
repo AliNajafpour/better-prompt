@@ -5,12 +5,18 @@ import random
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, ConversationHandler
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+GOOGLE_TOKENS = os.getenv("GOOGLE_TOKENS").split(',')
+
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-
-BOT_TOKEN = '8464400983:AAFsavlVzbjcFvyUQXicnyPPwozEAovxB0I'
-GOOGLE_TOKENS = ['AIzaSyDwz0TTEd23NezhYEs_4W4IVFpKDyPfLWM']
 
 WAITING_FOR_PROMPT = 1
 with open('prompt_base.txt', 'r') as f:
