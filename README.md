@@ -45,3 +45,7 @@ Gemmma API
 **Contributing**
 
 Contributions are welcome! Feel free to open issues or pull requests.
+
+---
+## License
+MIT
