@@ -1,6 +1,6 @@
 Better Prompt 🤖
 
-Better Prompt is a simple Telegram bot that transforms simple AI prompts into clear, powerful, and optimized prompts for text, code, or image generation. Perfect for anyone using LLMs or AI image tools.
+Better Prompt is a simple Telegram bot (built mostly for personal use) that transforms simple AI prompts into clear, powerful, and optimized prompts for text, code, or image generation. Perfect for anyone using LLMs or AI image tools.
 
 ---
 
