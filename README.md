@@ -28,7 +28,7 @@ Receive an improved, AI-ready version instantly.
 
 **Contact & Feedback**
 
-💡 Have ideas, suggestions, or found a bug? Contact: @YourUsername
+💡 Have ideas, suggestions, or found a bug? Contact: TG: @AliNajafpour07 
 
 ---
 
